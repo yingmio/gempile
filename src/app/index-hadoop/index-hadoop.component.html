@@ -1,0 +1,27 @@
+<!--
+ * @Descripttion:
+ * @version:
+ * @Author: huangyueshi
+ * @Date: 2020-07-09 17:32:38
+ * @LastEditors: huangyueshi
+ * @LastEditTime: 2020-07-16 19:40:53
+-->
+<div class="container" [ngClass]="{'ui-loading-lg': http.isLoading}">
+  <div class="header">
+    <div class="logo"></div>
+    <div class="head-menu">
+      <app-head-menu [menus]="menus" (itemNavigateClick)="navigateTo($event, true)" (openSideBarClick)="openSideBar($event)"></app-head-menu>
+    </div>
+    <div class="headbar-logo"></div>
+    <div class="head-tools-div">
+      <app-head-tools></app-head-tools>
+    </div>
+  </div>
+  <div class="content" id="iframeContent">
+    <div class="sidebar">
+      <app-siderbar-menu [menuList]="sidebarMenus" (itemNavigateClick)="navigateTo($event, false)"></app-siderbar-menu>
+    </div>
+    <div id="loadingDiv" class="ui-loading-lg" [hidden]="!showLoading"></div>
+    <!-- <iframe [src]="iframeUrl" frameborder="0"></iframe> -->
+  </div>
+</div>

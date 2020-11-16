@@ -1,0 +1,51 @@
+.siderBar .ant-layout-sider{
+  position: relative;
+  display: flex;
+}
+
+::ng-deep .siderBar  .ant-layout-sider-trigger{
+  top: 0;
+  bottom: inherit;
+  height:0.48rem;
+  line-height:0.48rem;
+  position: absolute !important;
+}
+
+::ng-deep  .siderBar .ant-menu-dark.ant-menu-inline .ant-menu-item{
+  // padding-left: 0 !important;
+  margin: 0;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  padding: 0 0.16rem;
+  padding-left: 0.16rem !important;
+}
+
+::ng-deep  .siderBar .ant-layout-sider-children{
+  width: 100%;
+  margin-top: 0.48rem;
+}
+
+::ng-deep  .siderBar .anticon-menu{
+  font-size: 0.2rem;
+}
+
+::ng-deep  .siderBar .ant-menu-inline .ant-menu-submenu-title{
+  margin: 0;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  padding: 0 0.16rem;
+  padding-left: 0.16rem !important;
+}
+
+::ng-deep  .siderBar .ant-menu-inline-collapsed>.ant-menu-submenu>.ant-menu-submenu-title {
+  padding: 0 0.32rem!important;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  margin:  0;
+  text-align: center;
+}
+
+::ng-deep  .siderBar .ant-menu-submenu-inline>.ant-menu-submenu-title .ant-menu-submenu-arrow{
+  right: 0.1rem;
+}
+

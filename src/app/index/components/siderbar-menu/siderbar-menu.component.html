@@ -1,0 +1,29 @@
+<div [hidden]="isHiddenSiderbar" class="siderBar">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzWidth]="'2.56rem'" [nzReverseArrow]="false">
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <!-- <app-side-menu-item [menus]="menuList" [firstUrl]="firstUrl"></app-side-menu-item> -->
+      <ng-container #name *ngFor="let menu of menuList; let key = index">
+        <li *ngIf="menu.url !== ''" nz-menu-item [nzSelected]="menu.url === (isFirstUrl === '' ? currentUrl : isFirstUrl)" (click)="navigateTo(menuList.parentTitle,menuList.code,menuList.type,menu.url)">
+          <span title>
+            <i nz-icon nzType="user"></i><span class="nav-text">{{menu.title}}</span>
+          </span>
+        </li>
+        <li *ngIf="menu.url === ''" nz-submenu [nzOpen]="menu.title === submenuTitle">
+          <span title>
+            <i nz-icon nzType="user"></i><span class="nav-text">{{menu.title}}</span>
+          </span>
+          <ul >
+            <ng-container #name *ngFor="let subMenu of menu.subMenu">
+              <li nz-menu-item [nzSelected]="subMenu.url === (isFirstUrl === '' ? currentUrl : isFirstUrl)" (click)="navigateTo(menuList.parentTitle,menuList.code,menuList.type,subMenu.url)" (click)="navigateTo(menuList.parentTitle,menuList.code,menuList.type,subMenu.url)">
+                <span title>
+                  <i nz-icon nzType="user"></i><span class="nav-text">{{subMenu.title}}</span>
+                </span>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </nz-sider>
+</div>
+

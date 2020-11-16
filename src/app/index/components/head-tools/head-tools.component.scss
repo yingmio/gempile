@@ -1,0 +1,17 @@
+.tools-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height: 0.7rem;
+  line-height: 0.7rem;;
+  .anticon{
+    font-size: 0.3rem;
+    cursor: pointer;
+  }
+  .username{
+    margin-right: 0.5rem;
+  }
+}
+
+

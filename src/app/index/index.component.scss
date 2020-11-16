@@ -1,0 +1,88 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    padding: 0;
+    background-size: 100% 100%;
+    position: relative;
+    .head-menu{
+      width: calc(100% - 6.24rem);
+    }
+    .logo {
+      width: 1rem;
+      height:0.7rem;
+      background-size: 100% 100%;
+    }
+    .head-tools-div{
+      position: absolute;
+      right: 2%;
+    }
+    .headbar-logo{
+      width: 3.68rem;
+      height:0.7rem;
+      position: absolute;
+      right: 0%;
+      background-size: 100% 100%;
+    }
+}
+
+.content{
+    width: 100%;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    .sidebar{
+      float: left;
+    }
+    #loadingDiv{
+      width: 100%;
+      height:100%;
+      background: #fff;
+    }
+}
+
+
+::ng-deep .header .ant-menu-horizontal{
+  background: none;
+  border-bottom: 0;
+  line-height: 0.7rem;
+  height: 0.7rem;
+}
+
+
+::ng-deep .header .ant-menu-submenu-title:hover{
+  border-bottom: 0 !important;
+}
+
+
+::ng-deep .header .ant-menu-horizontal>.ant-menu-submenu-open{
+  border-bottom: 0 !important;
+}
+
+::ng-deep .header .ant-menu-horizontal>.ant-menu-submenu{
+  border-bottom: 0 !important;
+  top: 0;
+}
+
+
+::ng-deep  .ant-menu-vertical.ant-menu-sub .ant-menu-item {
+  padding: 0 0.20rem !important;
+  height: 0.50rem;
+  line-height: 0.50rem;
+  margin: 0;
+}
+
+::ng-deep  .ant-menu-vertical .ant-menu-submenu-title{
+  padding: 0 0.20rem !important;
+  height: 0.50rem;
+  line-height: 0.50rem;
+  margin: 0;
+}
+
+
+::ng-deep .header .ant-menu-vertical{
+  border-right: 0;
+}

@@ -1,0 +1,48 @@
+<ul nz-menu nzMode="horizontal">
+  <li nz-submenu *ngFor="let item of menus">
+    <span title>{{ item.title }}</span>
+    <!-- 仅头部导航时 -->
+
+    <ul nz-menu *ngIf="item.type == 'headbar'">
+      <ng-container #name *ngFor="let menu of item.subMenu">
+        <li *ngIf="menu.url != ''"  [nzSelected]="menu.url === currentUrl" nz-menu-item (click)="itemNavigate(item.code, menu.url, item.type)">
+          {{ menu.title }}
+        </li>
+        <li *ngIf="menu.url == ''" nz-submenu>
+          <span title>{{ menu.title }}</span>
+          <ul nz-menu>
+            <ng-container #name *ngFor="let subMenu of menu.subMenu">
+              <li *ngIf="subMenu.url != ''" nz-menu-item [nzSelected]="subMenu.url === currentUrl"
+                (click)="itemNavigate(item.code, subMenu.url, item.type)">
+                {{ subMenu.title }}
+              </li>
+              <li *ngIf="subMenu.url == ''" nz-submenu>
+                <span title>{{ subMenu.title }}</span>
+                <ul nz-menu>
+                  <li nz-menu-item  *ngFor="let child of subMenu.subMenu" (click)="itemNavigate(item.code, child.url, item.type)">
+                    {{ child.title }}
+                  </li>
+                </ul>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+
+      <!-- 测试组件 -->
+      <!-- <app-head-menu-item [menus]="item.subMenu"></app-head-menu-item> -->
+
+    </ul>
+    <!-- 头部导航 + 侧边导航时 -->
+    <ul nz-menu *ngIf="item.type == 'sidebar'">
+      <ng-container #name *ngFor="let menu of item.subMenu">
+        <li *ngIf="menu.url != ''" nz-menu-item (click)="itemNavigate(item.code, menu.url, item.type)">
+          {{ menu.title }}
+        </li>
+        <li *ngIf="menu.url == ''" [nzSelected]= "menu.title === siderParentTitle" nz-menu-item (click)="openSideBar(item.code, menu.title)">
+          {{ menu.title }}
+        </li>
+      </ng-container>
+    </ul>
+  </li>
+</ul>

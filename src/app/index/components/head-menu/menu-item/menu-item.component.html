@@ -1,0 +1,11 @@
+<ng-container *ngFor="let menu of menus">
+  <li *ngIf="menu.url !== ''" nz-menu-item (click)="navigateTo(menu.url)">
+    {{ menu.title }}
+  </li>
+  <li *ngIf="menu.url === ''" nz-submenu>
+    <span title>{{ menu.title }}</span>
+    <ul *ngIf="menu.subMenu">
+      <app-head-menu-item [menus]="menu.subMenu"></app-head-menu-item>
+    </ul>
+  </li>
+</ng-container>

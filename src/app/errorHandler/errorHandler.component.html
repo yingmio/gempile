@@ -1,0 +1,14 @@
+<div class="error">
+  <div class="img">
+    <img src="./assets/images/error/403.svg" alt="">
+  </div>
+  <div class="errorContent">
+    <p>抱歉，{{text}}</p>
+    <div class="action-content">
+      <p>请</p>
+      <button *ngIf="isShowButton" nz-button [nzSize]="'default'" nzType="primary" (click)="return()">返回首页</button>
+      <p>或</p>
+      <button *ngIf="isShowButton" nz-button [nzSize]="'default'" nzType="primary" (click)="logout()">注销</button>
+    </div>
+  </div>
+</div>
