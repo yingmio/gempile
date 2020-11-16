@@ -1,0 +1,21 @@
+// 头部菜单
+$headbarBgImg:'../../assets/images/index/headbar.png'; // 头部菜单的背景图
+$headbarBgLeftLogo:'../../assets/images/index/richstonedt.png'; // 头部菜单的背景左侧的logo
+$headbarBgRightLogo:'../../assets/images/index/headbar-logo.png'; // 头部菜单的背景右侧的logo
+$headbarFirstMenuColor: #fff; // 一级菜单的字体颜色
+$headbarFirstMenuBgColor: #0381F3; // 一级菜单的背景颜色
+$headbarFirstMenuSelectedBgColor: #0650ED; // 一级菜单已选择的背景颜色
+$headbarMultistageMenuBgColor: #fff; // 有子菜单的二级菜单的背景颜色
+$headbarMultistageMenuSelectedColor: #0381F3; // 有子菜单的二级菜单已选择的字体颜色
+$headbarMultistageMenuActiveBgColor:#e6f7ff; // 二级菜单被选中时点击的瞬间的背景颜色
+
+// 侧边栏菜单
+$sidebarMenuColor: #fff; // 侧边栏的字体颜色
+$sidebarFirstMenuBgColor: #353443; // 侧边栏一级菜单的背景颜色
+$sidebarFirstMenuselectedColor: #0381F3; // 侧边栏已选二级菜单后一级菜单的字体颜色
+$sidebarFirstMenuselectedBgColor: #222133; // 侧边栏已选二级菜单后一级菜单的背景颜色
+$sidebarSecondMenuBgColor: #171624; // 侧边栏二级菜单的背景颜色
+
+
+// 头部菜单和侧边栏菜单的共用样式
+$multistageMenuSelectedBgColor: #0650ED; // 无子菜单的二级或三级菜单已选择的背景颜色

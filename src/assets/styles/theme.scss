@@ -1,0 +1,127 @@
+@import './customize.scss'; // 引入自定义颜色的scss
+/* 头部菜单 ------ ------ ------ ------ ------ ------ ------ ------ ------ */
+
+/* 头部菜单的背景图片地址 */
+.header {
+  background: url($headbarBgImg);
+}
+
+/* 头部菜单左边的logo图片地址 */
+.header .logo{
+  background: url($headbarBgLeftLogo);
+}
+
+/* 头部菜单右边的logo图片地址 */
+.header .headbar-logo{
+  background: url($headbarBgRightLogo);
+}
+
+/* 已选择的一级菜单，例如佛山无忧显示的背景颜色 */
+::ng-deep .header .ant-menu-horizontal>.ant-menu-submenu-selected{
+  color: $headbarFirstMenuColor;
+  background: $headbarFirstMenuSelectedBgColor
+}
+
+/* 一级菜单的字体颜色,背景颜色 */
+::ng-deep .header .ant-menu-horizontal{
+  color: $headbarFirstMenuColor;
+  background: $headbarFirstMenuBgColor;
+}
+
+/* 鼠标移动到一级菜单时显示的背景颜色 */
+::ng-deep .header .ant-menu-submenu-active{
+  background: $headbarFirstMenuSelectedBgColor;
+}
+
+/* 鼠标移动到一级菜单时显示的字体颜色 */
+::ng-deep .header .ant-menu-submenu-title:hover{
+  color: $headbarFirstMenuColor;
+}
+
+/* 鼠标放到子菜单时，一级菜单的字体颜色 */
+::ng-deep .header .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open{
+  color: $headbarFirstMenuColor;
+}
+
+/* 有子菜单的二级菜单或三级菜单的背景颜色 */
+::ng-deep .header .ant-menu-submenu>.ant-menu{
+  background-color: $headbarMultistageMenuBgColor;
+}
+
+/* 二级菜单被选中的点击的瞬间的背景颜色 */
+::ng-deep .header .ant-menu-item:active, .ant-menu-submenu-title:active{
+  background: $headbarMultistageMenuActiveBgColor;
+}
+
+/* 二级菜单和以下的菜单，鼠标放在菜单上显示的字体颜色 */
+::ng-deep  .ant-menu-item:hover{
+  color: $headbarMultistageMenuSelectedColor;
+}
+
+/* 已选择子菜单后二级菜单或三级菜单的字体颜色和背景颜色 */
+::ng-deep .header .ant-menu-vertical .ant-menu-submenu-selected{
+  color:$headbarMultistageMenuSelectedColor;
+  background: $headbarMultistageMenuBgColor;
+}
+
+// 一级菜单右边退出登录按钮和用户名的颜色
+.tools-container{
+  color:$headbarFirstMenuColor;
+}
+
+
+/* 侧边栏菜单  ------ ------ ------ ------ ------ ------ ------ ------*/
+
+/* 侧边菜单栏，除了一级菜单和二级菜单的部分面积背景颜色 */
+.content .sidebar{
+  background: $sidebarFirstMenuBgColor;
+}
+
+/* 一级菜单的背景颜色 */
+::ng-deep .siderBar .ant-menu-dark{
+  background: $sidebarFirstMenuBgColor;
+}
+
+/* 二级菜单的背景颜色,和渐变颜色 */
+::ng-deep .siderBar .ant-menu-dark .ant-menu-inline.ant-menu-sub{
+  background: $sidebarSecondMenuBgColor;
+  box-shadow: inherit;
+}
+
+/* 侧边栏已选子菜单的一级菜单背景颜色和字体颜色 */
+::ng-deep .siderBar .ant-menu-dark .ant-menu-submenu-selected{
+  color: $sidebarFirstMenuselectedColor;
+  background: $sidebarFirstMenuselectedBgColor;
+}
+
+/* 侧边栏最顶的收缩栏的背景颜色和图标的颜色 */
+::ng-deep .siderBar .ant-layout-sider-trigger{
+  background: $sidebarSecondMenuBgColor;
+  color: $sidebarMenuColor;
+}
+
+/* 鼠标放在一级菜单时的字体颜色 */
+::ng-deep .siderBar .ant-menu-dark .ant-menu-submenu-title:hover{
+  color: $sidebarMenuColor;
+}
+
+/* 鼠标放在二级菜单时的字体颜色 */
+::ng-deep .siderBar .ant-menu-dark .ant-menu-item:hover {
+  color: $sidebarMenuColor;
+}
+
+/* 侧边栏收缩按钮是收缩状态时，已选择子菜单后二级菜单的图标颜色和背景颜色 */
+::ng-deep .siderBar .ant-menu-vertical .ant-menu-submenu-selected{
+  color:$sidebarFirstMenuselectedColor;
+  background: $sidebarFirstMenuselectedBgColor;
+}
+
+/* 头部菜单和侧边栏菜单共用的样式-------------------------------------------------- */
+
+/* 一级菜单已选择的子菜单背景颜色和字体颜色 */
+::ng-deep .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+  background-color: $multistageMenuSelectedBgColor;
+  color: $headbarFirstMenuColor;
+  margin: 0;
+}
+
