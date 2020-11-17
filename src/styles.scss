@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+html{font-size:625% !important;}
+body{font-size:12px;font-size:0.12rem ;}
+p{font-size:14px;font-size:0.14rem;}
+
+@media screen and (max-width: 1366px){
+  html {
+    font-size: 445% !important;
+  }
+}
+
+.r-iframe {
+  flex: 1;
+  height: 100%;
+  border: 0;
+}
