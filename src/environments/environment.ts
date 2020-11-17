@@ -12,10 +12,10 @@
 
 export const environment = {
   production: false,
-  garnetOthersLoginUrl:
-  'http://localhost:4200/#/login?callbackUrl=http://localhost:4000/#/login',
   // garnetOthersLoginUrl:
-  //   'http://192.168.108.51:12305/#/login?callbackUrl=http://localhost:4000/#/login',
+  // 'http://localhost:4200/#/login?callbackUrl=http://localhost:4000/#/login',
+  garnetOthersLoginUrl:
+    'http://192.168.108.51:12305/#/login?callbackUrl=http://localhost:4000/#/login',
   garnetApiUrl: 'http://192.168.108.51:12305',
   server_url: '/garnet/v3.0'
 };

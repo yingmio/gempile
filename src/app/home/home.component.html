@@ -7,112 +7,82 @@
  * @LastEditTime: 2020-08-26 10:26:31
 -->
 <div class="home-container">
-  <div class="tool-container">
-    <div class="tool-item">
-      <span>当前用户，{{username}}</span>
-      <span class="space">|</span>
-      <span class="logout" (click)="logout()">退出登录</span>
+  <div class="header-container">
+    <div class="tool-container">
+      <div class="nav-desc">
+        <img src="./assets/images/index/richstonedt.png">
+        <span class="divsion">|</span>
+        <span>丰石科技 专业的移动大数据服务商</span>
+      </div>
+      <ul class="home-menu">
+        <li routerLink="/index">
+          <!-- <img src="./assets/images/index/icon_g_sel.png"> -->
+          移动网络性能分析平台
+        </li>
+        <li (click)="linkTo('hadoop')">
+          <!-- <img src="./assets/images/index/icon_m_sel.png"> -->
+          Mintaka大数据Hadoop平台
+        </li>
+        <li (click)="linkTo('Nile')">
+          <!-- <img src="./assets/images/index/icon_a_sel.png"> -->
+          Nile客流热力图
+        </li>
+      </ul>
+      <div class="tool-item">
+        <span>当前用户，{{username}}</span>
+        <span class="space">|</span>
+        <span class="logout" (click)="logout()">退出登录</span>
+      </div>
     </div>
   </div>
+    
   <div class="banner-container">
-<!--    <nz-carousel-->
-<!--      #myCarousel-->
-<!--      nzAutoPlay-->
-<!--      nzAutoPlaySpeed='4000'>-->
-<!--      <div nz-carousel-content *ngFor="let index of slidesData">-->
-<!--        <img [src]="index">-->
-<!--      </div>-->
-<!--    </nz-carousel>-->
-<!--    <div class="icon-container">-->
-<!--      <div class="icon-item" (click)="change(0)">-->
-<!--        <i nz-icon nzType="left" nzTheme="outline"></i>-->
-<!--      </div>-->
-<!--      <div class="icon-item" (click)="change(1)">-->
-<!--        <i nz-icon nzType="right" nzTheme="outline"></i>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-    <nz-carousel nzAutoPlay>
+    <nz-carousel
+      #myCarousel
+      nzAutoPlay
+      nzAutoPlaySpeed='4000'>
       <div nz-carousel-content *ngFor="let index of slidesData">
         <img [src]="index">
       </div>
     </nz-carousel>
-
-
-<!--  <div class="button-container">-->
-<!--    <div class="button-item" routerLink="/index">-->
-<!--      <img src="./assets/images/index/icon_g_sel.png">-->
-<!--      <p class="en">移动网络</p>-->
-<!--      <p>性能分析平台</p>-->
-<!--    </div>-->
-<!--    <div class="button-item" (click)="linkTo('hadoop')">-->
-<!--      <img src="./assets/images/index/icon_m_sel.png">-->
-<!--      <p class="en">Mintaka</p>-->
-<!--      <p>大数据Hadoop平台</p>-->
-<!--    </div>-->
-<!--    <div class="button-item" (click)="linkTo('Nile')">-->
-<!--      <img src="./assets/images/index/icon_a_sel.png">-->
-<!--      <p class="en">Nile</p>-->
-<!--      <p>客流热力图</p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="system-container">-->
-<!--    <div class="text-item">-->
-<!--      <p>系统介绍</p>-->
-<!--      <p>-->
-<!--        “二标四实”是指辖区标准作业图、房屋建筑标准地址信息（简称“二标”）和 实有房屋、实有人口、实有单位、实有设施（简称“四实”）。-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        潮州市“二标四实”综合系统建设包括：综合门户、空间标准地址库、任务工单管理、三维可视化管理、人口大数据分析、出租屋管理系统、信息资源管理系统、管理后台各子系统，满足对服务门户、移动应用、可视化统计分析、三维应用、资源服务、人口大数据分析等的实战应用需求，提供基础地图、采集成果展示、查询检索、统计、管理、空间分析、资源共享等服务，建设一个满足公安民警及其他政务系统的“二标四实”综合应用系统。-->
-<!--      </p>-->
-<!--    </div>-->
-<!--    <div class="img-item">-->
-<!--      <img src="./assets/images/index/about.png">-->
-<!--    </div>-->
-<!--  </div>-->
-
-  <nz-breadcrumb style="margin:20px auto 0 10%;font-size: .2rem">
-<!--    <nz-breadcrumb-item>-->
-<!--      丰石内部网站-->
-<!--    </nz-breadcrumb-item>-->
-    <nz-breadcrumb-item *ngFor="let title of breadcrumbTitle;let i=index">
-      <span style="cursor: pointer" (click)="changePage(title, i)">{{title}}</span>
-    </nz-breadcrumb-item>
-  </nz-breadcrumb>
-  <div *ngFor="let row of [].constructor(rows);let index = index" class="button-container" [ngStyle]="{'marginTop': index === 0 ? 10 : 0}">
-    <div *ngFor="let count of [].constructor(3); let subIndex = index" class="button-item">
-      <div *ngIf="menuData[index*3 + subIndex] !==undefined"  style="text-align: center"
-           (click)="linkTo(menuData[index*3 + subIndex])"
-           (mouseenter)="show($event, menuData[index*3 + subIndex])"
-           (mouseleave)="hide($event, menuData[index*3 + subIndex])">
-        <img [src]="'./assets/images/index/' + menuData[index*3 + subIndex].icon">
-        <p class="en">{{menuData[index * 3 + subIndex].mainTitle}}</p>
-        <p>{{menuData[index * 3 + subIndex].subTitle}}</p>
+    <div class="icon-container">
+      <div class="icon-item" (click)="change(0)">
+        <i nz-icon nzType="left" nzTheme="outline"></i>
+      </div>
+      <div class="icon-item" (click)="change(1)">
+        <i nz-icon nzType="right" nzTheme="outline"></i>
       </div>
     </div>
-    <!--      <div *ngFor="let subIndex of [].constructor(3)" class="button-item"-->
-    <!--           (click)="linkTo(menuData[index*3 + subIndex])"-->
-    <!--           (mouseenter)="show(menuData[index*3 + subIndex])"-->
-    <!--           (mouseleave)="hide(menuData[index*3 + subIndex])">-->
-    <!--        <img [src]="'./assets/images/index/' + menuData[index*3 + subIndex].icon">-->
-    <!--        <p class="en">{{menuData[index*3 + subIndex].mainTitle}}</p>-->
-    <!--        <p>{{menuData[index*3 + subIndex].subTitle}}</p>-->
-    <!--      </div>-->
+  </div>
+  <div class="button-container">
+    <div class="button-item" routerLink="/index">
+      <img src="./assets/images/index/icon_g_sel.png">
+      <p class="en">移动网络</p>
+      <p>性能分析平台</p>
+    </div>
+    <div class="button-item" (click)="linkTo('hadoop')">
+      <img src="./assets/images/index/icon_m_sel.png">
+      <p class="en">Mintaka</p>
+      <p>大数据Hadoop平台</p>
+    </div>
+    <div class="button-item" (click)="linkTo('Nile')">
+      <img src="./assets/images/index/icon_a_sel.png">
+      <p class="en">Nile</p>
+      <p>客流热力图</p>
+    </div>
   </div>
   <div class="system-container">
     <div class="text-item">
       <p>系统介绍</p>
-      <p>{{describe}}</p>
-<!--      <p>-->
-<!--        “二标四实”是指辖区标准作业图、房屋建筑标准地址信息（简称“二标”）和 实有房屋、实有人口、实有单位、实有设施（简称“四实”）。-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        潮州市“二标四实”综合系统建设包括：综合门户、空间标准地址库、任务工单管理、三维可视化管理、人口大数据分析、出租屋管理系统、信息资源管理系统、管理后台各子系统，满足对服务门户、移动应用、可视化统计分析、三维应用、资源服务、人口大数据分析等的实战应用需求，提供基础地图、采集成果展示、查询检索、统计、管理、空间分析、资源共享等服务，建设一个满足公安民警及其他政务系统的“二标四实”综合应用系统。-->
-<!--      </p>-->
+      <p>
+        “二标四实”是指辖区标准作业图、房屋建筑标准地址信息（简称“二标”）和 实有房屋、实有人口、实有单位、实有设施（简称“四实”）。
+      </p>
+      <p>
+        潮州市“二标四实”综合系统建设包括：综合门户、空间标准地址库、任务工单管理、三维可视化管理、人口大数据分析、出租屋管理系统、信息资源管理系统、管理后台各子系统，满足对服务门户、移动应用、可视化统计分析、三维应用、资源服务、人口大数据分析等的实战应用需求，提供基础地图、采集成果展示、查询检索、统计、管理、空间分析、资源共享等服务，建设一个满足公安民警及其他政务系统的“二标四实”综合应用系统。
+      </p>
     </div>
     <div class="img-item">
-      <img src="../../assets/images/index/about.png">
+      <img src="./assets/images/index/about.png">
     </div>
   </div>
 </div>
